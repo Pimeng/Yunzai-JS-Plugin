@@ -12,8 +12,8 @@
 因为近期Phira服务器频频炸服，群友需要，故诞生了本插件
 
 #### 食用方法
-下载插件并放到Yunzai/plugins/example目录下即可
-或者在根目录下运行这个指令
+下载插件并放到Yunzai/plugins/example目录下即可<br>
+或者在根目录下运行这个指令   
 ``` bash
 curl -o "./plugins/example/Checkphira.js" "https://gitee.com/pimeng/yunzai-simpleplugin/raw/master/checkphira.js"
 ```
