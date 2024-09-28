@@ -13,8 +13,8 @@
 
 #### 食用方法
 下载插件并放到Yunzai/plugins/example目录下即可<br>
-或者在根目录下运行这个指令   
-``` bash
+或者在云崽根目录下运行这个指令   
+``` 
 curl -o "./plugins/example/Checkphira.js" "https://gitee.com/pimeng/yunzai-simpleplugin/raw/master/checkphira.js"
 ```
 
