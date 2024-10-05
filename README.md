@@ -17,6 +17,12 @@
 ``` 
 curl -o "./plugins/example/Checkphira.js" "https://gitee.com/pimeng/yunzai-simpleplugin/raw/master/checkphira.js"
 ```
+注意，本插件需要添加“axios”作为外部库，可以使用下面指令来添加
+```
+cd plugins/example # 进入目录
+pnpm add axios # 添加 axios 库
+```
+
 
 ## 参与贡献
 
