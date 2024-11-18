@@ -1,33 +1,13 @@
 import plugin from '../../lib/plugins/plugin.js';
-import axios from 'axios'; // 引入axios库用于发送HTTP请求
+import axios from 'axios';
 
-// Edit by Pimeng 2024-10-6 01:36
-// 使用 WTFPL 开源协议
-
-const phiraUrl = 'https://api.phira.cn/chart/26551';
-const mpUrl = 'http://mp.example.com'; // 替换为你的mp服务器
-
-function checkServerStatus(url, isPhira = false) {
-    return axios.get(url, {
-        timeout: 5000, // 设置超时时间为5秒
-    }).then(response => {
-        if (response.status >= 200 && response.status < 300) {
-            return `✅服务器正常运行`;
-        } else if (isPhira && (response.status === 502 || response.status === 500)) {
-            return `❌️服务器故障（状态码：${response.status}）`;
-        } else if (response.status >= 500 && response.status < 600) {
-            return `服务器返回5xx状态码：${response.status}`;
-        } else {
-            return `服务器返回非2xx/5xx状态码：${response.status}`; // 理论上这里不会被执行到，因为非5xx的非2xx状态码已经在上面的else if中处理了
-        }
-    }).catch(error => {
-        if (error.code === 'ECONNABORTED') {
-            return '请求超时，服务器可能无响应';
-        } else {
-            return `网络错误：${error.message}`;
-        }
-    });
-}
+/*
+* @Tip: 传播该插件时还请保留作者信息，当然，基于WTFPL协议，随你的便
+* @Author: Pimeng
+* @Time: 2024-11-19 01:35
+* @LICENSE: WTFPL
+* @ContactMe: QQ1470458485
+*/
 
 export class example extends plugin {
     constructor() {
@@ -37,21 +17,38 @@ export class example extends plugin {
             event: 'message',
             priority: 5000,
             rule: [{
-                reg: "#pingphira",
-                fnc: 'finder'
+                reg: "/phira",
+                fnc: 'check'
             }]
         });
     }
-
-    async finder(e) {
-        var replyMsg = '\n正在检查服务器状态，请稍后...';
-        e.reply([segment.at(e.user_id), ` ${replyMsg}`]);
+    
+    function checkServerStatus(url) {
+    return axios.get(url, {
+        timeout: 3000,
+    }).then(response => {
+        if (response.status == 200) {
+          return `✅服务器正常运行`;
+        } else if (response.status >= 500 && response.status <  600) {
+        return `❌️服务器故障（状态码：${response.status}）`;
+        }}).catch(error => {
+        const errorMessage = error.code === 'ECONNABORTED' || (error.message && error.message.includes('Network Error') && !(error.response && error.response.status))
+         ? '请求超时或网络错误，服务器可能无响应。\n可能出现的情况：连接不上联机服务器。'
+         : `网络错误：${error.message}`;
+        return `⚠️${errorMessage}\n`;
+    });
+    } 
+    async check(e) {
+        var replyMsg = '\n正在查询服务器状态，请稍后...';
+        e.reply([segment.at(e.user_id), ` ${replyMsg}`],true);
+        const phiraUrl = 'https://api.phira.cn/chart/';
+        const mpUrl = 'http://127.0.0.1:8080/room'; // 这里按照你自己的地址修改哈，实际应该是mp服务器的查房间地址
         const [phiraStatus, mpStatus] = await Promise.all([
-            checkServerStatus(phiraUrl, true),
+            checkServerStatus(phiraUrl),
             checkServerStatus(mpUrl)
         ]);
-        let statusMsg = `Phira服务器状态:\n ${phiraStatus}\n联机服务器状态:\n ${mpStatus}`;
-        var Reply = '\n服务器状态检查结果：\n' + statusMsg;
-        e.reply([segment.at(e.user_id), ` ${Reply}`]);
+        let statusMsg = ;
+        var Reply = `\n服务器状态查询结果：\nPhira服务器状态: ${phiraStatus}\n联机服务器状态: ${mpStatus}` + `\n注：以上结果仅供参考，具体还需根据当地情况确认。`;
+        await e.reply([segment.at(e.user_id), ` ${Reply}`],true)
     }
 }
