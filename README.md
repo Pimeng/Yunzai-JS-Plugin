@@ -24,6 +24,8 @@ cd plugins/example # 进入目录
 pnpm add axios # 添加 axios 库
 ```
 
+***
+
 ## GetVer
 #### 介绍
 十分简单的基于node:fs获取package.json来获取云崽分支信息的插件
