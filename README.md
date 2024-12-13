@@ -3,6 +3,7 @@
 
 ## 目录
  - [CheckPhira.js](https://gitee.com/pimeng/yunzai-simpleplugin#CheckPhira)
+ - [Getver.js](https://gitee.com/pimeng/yunzai-simpleplugin#GetVer)
 
 ## 介绍
 自用简单JS插件
@@ -23,10 +24,13 @@ cd plugins/example # 进入目录
 pnpm add axios # 添加 axios 库
 ```
 
+## GetVer
+#### 介绍
+十分简单的基于node:fs获取package.json来获取云崽分支信息的插件
 
-## 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+#### 食用方法
+下载插件并放到Yunzai/plugins/example目录下即可<br>
+或者在云崽根目录下运行这个指令   
+``` 
+curl -o "./plugins/example/Getver.js" "https://gitee.com/pimeng/yunzai-simpleplugin/raw/master/getver.js"
+```
