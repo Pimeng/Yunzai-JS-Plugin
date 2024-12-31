@@ -3,7 +3,7 @@ import fs from 'node:fs'
 
 let packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'))
 
-export class PhigrosUpdatePlugin extends plugin {
+export class GetVer extends plugin {
     constructor() {
       super({
         name: 'GetVersion',
