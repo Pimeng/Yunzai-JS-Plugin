@@ -2,10 +2,6 @@ import plugin from '../../lib/plugins/plugin.js';
 import axios from 'axios';
 
 /*
-* @Tip: 传播该插件时还请保留作者信息
-* @Author: Pimeng
-* @Time: 2024-12-31 14：00
-* @LICENSE: GPL-3.0
 * @ContactMe: QQ1470458485 Or pimeng@pimeng.icu
 */
 

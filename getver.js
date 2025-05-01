@@ -7,12 +7,12 @@ export class GetVer extends plugin {
     constructor() {
       super({
         name: 'GetVersion',
-        dsc: '简单获取当前运行的云崽版本',
+        dsc: '简单获取当前运行的云崽分支',
         event: 'message',
         priority: 100,
         rule: [
           {
-            reg: '^/getver', // 命令
+            reg: '^/getver$', // 命令
             fnc: 'getyunver'
           }
         ]
