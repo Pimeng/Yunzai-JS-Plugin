@@ -6,14 +6,15 @@
  - [Getver.js](https://gitee.com/pimeng/yunzai-simpleplugin#GetVer)
  - [BMI计算器](https://gitee.com/pimeng/yunzai-simpleplugin#BMI计算器)
 
-## 介绍
+### 介绍
 自用简单JS插件
 
-### CheckPhira
-#### 介绍
+## CheckPhira   
+
+### 介绍
 因为近期Phira服务器频频炸服，群友需要，故诞生了本插件
 
-#### 食用方法
+### 食用方法
 下载插件并放到Yunzai/plugins/example目录下即可<br>
 或者在云崽根目录下运行这个指令   
 ``` 
@@ -27,11 +28,11 @@ pnpm add axios # 添加 axios 库
 
 ***
 
-### GetVer
-#### 介绍
+## GetVer
+### 介绍
 十分简单的基于node:fs获取package.json来获取云崽分支信息的插件
 
-#### 食用方法
+### 食用方法
 下载插件并放到Yunzai/plugins/example目录下即可<br>
 或者在云崽根目录下运行这个指令   
 ``` 
@@ -41,12 +42,12 @@ curl -o "./plugins/example/Getver.js" "https://gitee.com/pimeng/yunzai-simpleplu
 
 ***
 
-### BMI计算器
-#### 介绍   
+## BMI计算器
+### 介绍   
 
 闲出屁写的一个插件
 
-#### 食用方法
+### 食用方法
 下载插件并放到Yunzai/plugins/example目录下即可<br>
 或者在云崽根目录下运行这个指令   
 ``` 
