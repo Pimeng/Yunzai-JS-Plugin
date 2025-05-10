@@ -1,10 +1,10 @@
-# yunzai-simpleplugin
-# 云崽单JS插件
+# 云崽单JS插件 yunzai-simpleplugin
 
 ## 目录
  - [CheckPhira.js](https://gitee.com/pimeng/yunzai-simpleplugin#CheckPhira)
  - [Getver.js](https://gitee.com/pimeng/yunzai-simpleplugin#GetVer)
  - [BMI计算器](https://gitee.com/pimeng/yunzai-simpleplugin#BMI计算器)
+ - [DateNow](https://gitee.com/pimeng/yunzai-simpleplugin#DateNow)
 
 ### 介绍
 自用简单JS插件
@@ -39,13 +39,12 @@ pnpm add axios # 添加 axios 库
 curl -o "./plugins/example/Getver.js" "https://gitee.com/pimeng/yunzai-simpleplugin/raw/master/getver.js"
 ```
 
-
 ***
 
 ## BMI计算器
 ### 介绍   
 
-闲出屁写的一个插件
+闲出屁写的一个插件，就是拿来计算BMI的
 
 ### 食用方法
 下载插件并放到Yunzai/plugins/example目录下即可<br>
@@ -54,3 +53,22 @@ curl -o "./plugins/example/Getver.js" "https://gitee.com/pimeng/yunzai-simpleplu
 curl -o "./plugins/example/BMICalculator.js" "https://gitee.com/pimeng/yunzai-simpleplugin/raw/master/BMICalculator.js"
 ```
 
+
+***
+
+## DateNow
+### 介绍   
+
+闲出屁写的一个插件，用来获取现在的时间的插件
+
+### 食用方法
+下载插件并放到Yunzai/plugins/example目录下即可<br>
+或者在云崽根目录下运行这个指令   
+``` bash
+curl -o "./plugins/example/DateNow.js" "https://gitee.com/pimeng/yunzai-simpleplugin/raw/master/DateNow.js"
+```
+注意，本插件需要添加“chinese-lunar”和“moment”作为外部库，可以使用下面指令来添加
+``` bash
+cd plugins/example # 进入目录
+pnpm add chinese-lunar moment
+```
