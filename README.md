@@ -5,7 +5,7 @@
 - [Getver.js](https://gitee.com/pimeng/yunzai-simpleplugin#GetVer)
 - [BMI计算器](https://gitee.com/pimeng/yunzai-simpleplugin#BMI%E8%AE%A1%E7%AE%97%E5%99%A8)
 - [DateNow](https://gitee.com/pimeng/yunzai-simpleplugin#DateNow)
-
+- [Phigros版本更新信息](https://gitee.com/pimeng/yunzai-simpleplugin#Phigros版本更新信息)
 ### 介绍
 自用简单JS插件
 
@@ -71,4 +71,28 @@ curl -o "./plugins/example/DateNow.js" "https://gitee.com/pimeng/yunzai-simplepl
 ``` bash
 cd plugins/example # 进入目录
 pnpm add chinese-lunar moment
+```
+
+***
+
+## Phigros版本更新信息
+### 介绍   
+   
+无用插件+1   
+通过抓包获取Phigros的更新日志
+   
+### 食用方法
+   
+⚠️注意：为了作者的**人参氨荃**，抓包得到的API不能公开，请自己抓吧QwQ，抓到修改apiUrl里面的内容就行了
+
+下载插件并放到Yunzai/plugins/example目录下即可<br>
+或者在云崽根目录下运行这个指令   
+
+``` bash
+curl -o "./plugins/example/TaptapPhigrosUpdateInfo.js" "https://gitee.com/pimeng/yunzai-simpleplugin/raw/master/TaptapPhigrosUpdateInfo.js"
+```
+注意，本插件需要添加“axios”和“node-html-parser”作为外部库，可以使用下面指令来添加
+``` bash
+cd plugins/example # 进入目录
+pnpm add axios node-html-parser
 ```
