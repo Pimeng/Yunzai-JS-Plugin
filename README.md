@@ -83,16 +83,15 @@ pnpm add chinese-lunar moment
    
 ### 食用方法
    
-⚠️注意：为了作者的**人参氨荃**，抓包得到的API不能公开，请自己抓吧QwQ，抓到修改apiUrl里面的内容就行了
-
-下载插件并放到Yunzai/plugins/example目录下即可<br>
-或者在云崽根目录下运行这个指令   
-
-``` bash
-curl -o "./plugins/example/TaptapPhigrosUpdateInfo.js" "https://gitee.com/pimeng/yunzai-simpleplugin/raw/master/TaptapPhigrosUpdateInfo.js"
-```
 注意，本插件需要添加“axios”和“node-html-parser”作为外部库，可以使用下面指令来添加
 ``` bash
 cd plugins/example # 进入目录
 pnpm add axios node-html-parser
+```
+   
+下载插件并放到Yunzai/plugins/example目录下即可<br>
+或者在云崽根目录下运行这个指令   
+   
+``` bash
+curl -o "./plugins/example/TaptapPhigrosUpdateInfo.js" "https://gitee.com/pimeng/yunzai-simpleplugin/raw/master/TaptapPhigrosUpdateInfo.js"
 ```

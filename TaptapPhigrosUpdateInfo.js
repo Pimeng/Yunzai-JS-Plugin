@@ -20,12 +20,7 @@ export class TapTapUpdate extends plugin {
 
     async getUpdateInfo(e) {
             try {
-                const apiUrl = 'https://example.com'; // 这里你自己抓包吧QwQ，为了防止封仓库（逃）（其实很容易抓到的QwQ）
-                /* 
-                *  实际上抓包得到的返回内容应该是下面的格式
-                *  {"data":{"list":[{"version_label":"最新版本号","update_date":更新日期戳,"whatsnew":{"text":"更新日志"}}],"prev_page":"","next_page":"码一下"},"now":现在时间戳,"success":true}
-                * 
-                */
+                const apiUrl = 'https://falling-glade-3316.pimeng.workers.dev/'; // 搞了个反代，这样就无需抓包力
                 const response = await axios.get(apiUrl);
     
                 if (response.data.success) {
