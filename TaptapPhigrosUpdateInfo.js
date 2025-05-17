@@ -20,7 +20,7 @@ export class TapTapUpdate extends plugin {
 
     async getUpdateInfo(e) {
             try {
-                const apiUrl = 'https://falling-glade-3316.pimeng.workers.dev/'; // 搞了个反代，这样就无需抓包力
+                const apiUrl = 'https://phiupdateinfo.pmya.xyz/'; // 搞了个反代，这样就无需抓包力
                 const response = await axios.get(apiUrl);
     
                 if (response.data.success) {
