@@ -1,11 +1,11 @@
 # 云崽单JS插件 yunzai-simpleplugin
 
 ## 目录
-- [CheckPhira.js](https://gitee.com/pimeng/yunzai-simpleplugin#CheckPhira)
-- [Getver.js](https://gitee.com/pimeng/yunzai-simpleplugin#GetVer)
-- [BMI计算器](https://gitee.com/pimeng/yunzai-simpleplugin#BMI%E8%AE%A1%E7%AE%97%E5%99%A8)
-- [DateNow](https://gitee.com/pimeng/yunzai-simpleplugin#DateNow)
-- [Phigros版本更新信息](https://gitee.com/pimeng/yunzai-simpleplugin#Phigros版本更新信息)
+- [CheckPhira.js](https://gitee.com/pimeng/yunzai-jsplugin#CheckPhira)
+- [Getver.js](https://gitee.com/pimeng/yunzai-jsplugin#GetVer)
+- [BMI计算器](https://gitee.com/pimeng/yunzai-jsplugin#BMI%E8%AE%A1%E7%AE%97%E5%99%A8)
+- [DateNow](https://gitee.com/pimeng/yunzai-jsplugin#DateNow)
+- [Phigros版本更新信息](https://gitee.com/pimeng/yunzai-jsplugin#Phigros版本更新信息)
 ### 介绍
 自用简单JS插件
 
@@ -18,7 +18,7 @@
 下载插件并放到Yunzai/plugins/example目录下即可<br>
 或者在云崽根目录下运行这个指令   
 ``` 
-curl -o "./plugins/example/Checkphira.js" "https://gitee.com/pimeng/yunzai-simpleplugin/raw/master/checkphira.js"
+curl -o "./plugins/example/Checkphira.js" "https://gitee.com/pimeng/yunzai-jsplugin/raw/master/checkphira.js"
 ```
 注意，本插件需要添加“axios”作为外部库，可以使用下面指令来添加
 ```
@@ -36,7 +36,7 @@ pnpm add axios # 添加 axios 库
 下载插件并放到Yunzai/plugins/example目录下即可<br>
 或者在云崽根目录下运行这个指令   
 ``` 
-curl -o "./plugins/example/Getver.js" "https://gitee.com/pimeng/yunzai-simpleplugin/raw/master/getver.js"
+curl -o "./plugins/example/Getver.js" "https://gitee.com/pimeng/yunzai-jsplugin/raw/master/getver.js"
 ```
 
 ***
@@ -50,7 +50,7 @@ curl -o "./plugins/example/Getver.js" "https://gitee.com/pimeng/yunzai-simpleplu
 下载插件并放到Yunzai/plugins/example目录下即可<br>
 或者在云崽根目录下运行这个指令   
 ``` 
-curl -o "./plugins/example/BMICalculator.js" "https://gitee.com/pimeng/yunzai-simpleplugin/raw/master/BMICalculator.js"
+curl -o "./plugins/example/BMICalculator.js" "https://gitee.com/pimeng/yunzai-jsplugin/raw/master/BMICalculator.js"
 ```
 
 
@@ -65,7 +65,7 @@ curl -o "./plugins/example/BMICalculator.js" "https://gitee.com/pimeng/yunzai-si
 下载插件并放到Yunzai/plugins/example目录下即可<br>
 或者在云崽根目录下运行这个指令   
 ``` bash
-curl -o "./plugins/example/DateNow.js" "https://gitee.com/pimeng/yunzai-simpleplugin/raw/master/DateNow.js"
+curl -o "./plugins/example/DateNow.js" "https://gitee.com/pimeng/yunzai-jsplugin/raw/master/DateNow.js"
 ```
 注意，本插件需要添加“chinese-lunar”和“moment”作为外部库，可以使用下面指令来添加
 ``` bash
@@ -93,5 +93,5 @@ pnpm add axios node-html-parser
 或者在云崽根目录下运行这个指令   
    
 ``` bash
-curl -o "./plugins/example/TaptapPhigrosUpdateInfo.js" "https://gitee.com/pimeng/yunzai-simpleplugin/raw/master/TaptapPhigrosUpdateInfo.js"
+curl -o "./plugins/example/TaptapPhigrosUpdateInfo.js" "https://gitee.com/pimeng/yunzai-jsplugin/raw/master/TaptapPhigrosUpdateInfo.js"
 ```
