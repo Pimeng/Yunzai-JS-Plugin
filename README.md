@@ -1,11 +1,11 @@
 # 云崽单JS插件 yunzai-simpleplugin
 
 ## 目录
-- [CheckPhira.js](https://gitee.com/pimeng/yunzai-jsplugin#CheckPhira)
-- [Getver.js](https://gitee.com/pimeng/yunzai-jsplugin#GetVer)
-- [BMI计算器](https://gitee.com/pimeng/yunzai-jsplugin#BMI%E8%AE%A1%E7%AE%97%E5%99%A8)
-- [DateNow](https://gitee.com/pimeng/yunzai-jsplugin#DateNow)
-- [Phigros版本更新信息](https://gitee.com/pimeng/yunzai-jsplugin#Phigros版本更新信息)
+- [CheckPhira.js](https://gitee.com/pimeng/yunzai-jsplugin#checkphira)
+- [Getver.js](https://gitee.com/pimeng/yunzai-jsplugin#getver)
+- [BMI计算器](https://gitee.com/pimeng/yunzai-jsplugin#bmi%E8%AE%A1%E7%AE%97%E5%99%A8)
+- [DateNow](https://gitee.com/pimeng/yunzai-jsplugin#datenow)
+- [Phigros版本更新信息](https://gitee.com/pimeng/yunzai-jsplugin#phigros版本更新信息)
 - [快递查询](https://gitee.com/pimeng/yunzai-jsplugin#快递查询)
 
 ### 介绍
