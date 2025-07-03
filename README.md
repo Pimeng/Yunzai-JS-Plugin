@@ -6,6 +6,8 @@
 - [BMI计算器](https://gitee.com/pimeng/yunzai-jsplugin#BMI%E8%AE%A1%E7%AE%97%E5%99%A8)
 - [DateNow](https://gitee.com/pimeng/yunzai-jsplugin#DateNow)
 - [Phigros版本更新信息](https://gitee.com/pimeng/yunzai-jsplugin#Phigros版本更新信息)
+- [快递查询](https://gitee.com/pimeng/yunzai-jsplugin#快递查询)
+
 ### 介绍
 自用简单JS插件
 
@@ -94,4 +96,26 @@ pnpm add axios node-html-parser
    
 ``` bash
 curl -o "./plugins/example/TaptapPhigrosUpdateInfo.js" "https://gitee.com/pimeng/yunzai-jsplugin/raw/master/TaptapPhigrosUpdateInfo.js"
+```
+
+## 快递查询
+### 介绍   
+   
+无用插件+1   
+莫名其妙抓来一个API，遂拿来用
+什么？你问我API在哪？自己抓一个（
+我好不容易找来的API，可不能泄露（
+   
+### 食用方法
+
+注意，本插件需要添加“axios”作为外部库，可以使用下面指令来添加
+``` bash
+cd plugins/example # 进入目录
+pnpm add axios
+```
+   
+下载插件并放到Yunzai/plugins/example目录下即可<br>
+或者在云崽根目录下运行这个指令   
+``` bash
+curl -o "./plugins/example/快递查询.js" "https://gitee.com/pimeng/yunzai-jsplugin/raw/master/expressquery.js"
 ```
