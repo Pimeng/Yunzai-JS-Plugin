@@ -7,8 +7,8 @@
 - [DateNow](https://gitee.com/pimeng/yunzai-jsplugin#datenow)
 - [Phigros版本更新信息](https://gitee.com/pimeng/yunzai-jsplugin#phigros%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0%E4%BF%A1%E6%81%AF)
 - [快递查询](https://gitee.com/pimeng/yunzai-jsplugin#%E5%BF%AB%E9%80%92%E6%9F%A5%E8%AF%A2)
-- [神人指数分析器](https://gitee.com/pimeng/yunzai-jsplugin#%e7%a5%9e%e4%ba%ba%e6%8c%87%e6%95%b0%e5%88%86%e6%9e%90%e5%99%a8)
-- [Gay指数](https://gitee.com/pimeng/yunzai-jsplugin#Gay%e6%8c%87%e6%95%b0)
+- [Gay指数](https://gitee.com/pimeng/yunzai-jsplugin#gay%E6%8C%87%E6%95%B0)
+- [神人指数分析器](https://gitee.com/pimeng/yunzai-jsplugin#%E7%A5%9E%E4%BA%BA%E6%8C%87%E6%95%B0%E5%88%86%E6%9E%90%E5%99%A8)
 
 ### 介绍
 自用简单JS插件
