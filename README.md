@@ -5,8 +5,10 @@
 - [Getver.js](https://gitee.com/pimeng/yunzai-jsplugin#getver)
 - [BMI计算器](https://gitee.com/pimeng/yunzai-jsplugin#bmi%E8%AE%A1%E7%AE%97%E5%99%A8)
 - [DateNow](https://gitee.com/pimeng/yunzai-jsplugin#datenow)
-- [Phigros版本更新信息](https://gitee.com/pimeng/yunzai-jsplugin#phigros版本更新信息)
-- [快递查询](https://gitee.com/pimeng/yunzai-jsplugin#快递查询)
+- [Phigros版本更新信息](https://gitee.com/pimeng/yunzai-jsplugin#phigros%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0%E4%BF%A1%E6%81%AF)
+- [快递查询](https://gitee.com/pimeng/yunzai-jsplugin#%E5%BF%AB%E9%80%92%E6%9F%A5%E8%AF%A2)
+- [神人指数分析器](https://gitee.com/pimeng/yunzai-jsplugin#%e7%a5%9e%e4%ba%ba%e6%8c%87%e6%95%b0%e5%88%86%e6%9e%90%e5%99%a8)
+- [Gay指数](https://gitee.com/pimeng/yunzai-jsplugin#Gay%e6%8c%87%e6%95%b0)
 
 ### 介绍
 自用简单JS插件
@@ -66,11 +68,11 @@ curl -o "./plugins/example/BMICalculator.js" "https://gitee.com/pimeng/yunzai-js
 ### 食用方法
 下载插件并放到Yunzai/plugins/example目录下即可<br>
 或者在云崽根目录下运行这个指令   
-``` bash
+``` console
 curl -o "./plugins/example/DateNow.js" "https://gitee.com/pimeng/yunzai-jsplugin/raw/master/DateNow.js"
 ```
 注意，本插件需要添加“chinese-lunar”和“moment”作为外部库，可以使用下面指令来添加
-``` bash
+``` console
 cd plugins/example # 进入目录
 pnpm add chinese-lunar moment
 ```
@@ -86,7 +88,7 @@ pnpm add chinese-lunar moment
 ### 食用方法
    
 注意，本插件需要添加“axios”和“node-html-parser”作为外部库，可以使用下面指令来添加
-``` bash
+``` console
 cd plugins/example # 进入目录
 pnpm add axios node-html-parser
 ```
@@ -94,7 +96,7 @@ pnpm add axios node-html-parser
 下载插件并放到Yunzai/plugins/example目录下即可<br>
 或者在云崽根目录下运行这个指令   
    
-``` bash
+``` console
 curl -o "./plugins/example/TaptapPhigrosUpdateInfo.js" "https://gitee.com/pimeng/yunzai-jsplugin/raw/master/TaptapPhigrosUpdateInfo.js"
 ```
 
@@ -108,14 +110,50 @@ curl -o "./plugins/example/TaptapPhigrosUpdateInfo.js" "https://gitee.com/pimeng
    
 ### 食用方法
 
-注意，本插件需要添加“axios”作为外部库，可以使用下面指令来添加
-``` bash
+注意，本插件需要添加“axios”作为外部库，可以使用下面指令来添加   
+``` console
 cd plugins/example # 进入目录
 pnpm add axios
 ```
    
 下载插件并放到Yunzai/plugins/example目录下即可<br>
 或者在云崽根目录下运行这个指令   
-``` bash
+``` console
 curl -o "./plugins/example/快递查询.js" "https://gitee.com/pimeng/yunzai-jsplugin/raw/master/expressquery.js"
+```
+
+## Gay指数
+### 介绍   
+
+源自：https://akanyi.github.io/Gaynum/   
+由我修改为云崽版   
+   
+### 食用方法
+   
+注意，本插件需要添加“pinyin”和“wanakana”作为外部库，可以使用下面指令来添加   
+``` console
+cd plugins/example # 进入目录
+pnpm add -w pinyin wanakana
+```
+
+下载插件并放到Yunzai/plugins/example目录下即可<br>
+或者在云崽根目录下运行这个指令   
+``` console
+curl -o "./plugins/example/Gay指数.js" "https://gitee.com/pimeng/yunzai-jsplugin/raw/master/Gay指数.js"
+```
+
+## 神人指数分析器
+### 介绍   
+   
+源自可爱大彩兔 & Mr_Onion   
+源地址：https://sb.mr-onion-blog.fun/   
+由我修改为云崽版   
+为了避免违规，我修改为神人  
+   
+### 食用方法
+   
+下载插件并放到Yunzai/plugins/example目录下即可<br>
+或者在云崽根目录下运行这个指令   
+``` console
+curl -o "./plugins/example/神人指数分析器.js" "https://gitee.com/pimeng/yunzai-jsplugin/raw/master/神人指数分析器.js"
 ```
