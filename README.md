@@ -9,6 +9,7 @@
 - [快递查询](https://gitee.com/pimeng/yunzai-jsplugin#%E5%BF%AB%E9%80%92%E6%9F%A5%E8%AF%A2)
 - [Gay指数](https://gitee.com/pimeng/yunzai-jsplugin#gay%E6%8C%87%E6%95%B0)
 - [神人指数分析器](https://gitee.com/pimeng/yunzai-jsplugin#%E7%A5%9E%E4%BA%BA%E6%8C%87%E6%95%B0%E5%88%86%E6%9E%90%E5%99%A8)
+- [sendMail](https://gitee.com/pimeng/yunzai-jsplugin#sendmail)
 
 ### 介绍
 自用简单JS插件
@@ -156,4 +157,25 @@ curl -o "./plugins/example/Gay指数.js" "https://gitee.com/pimeng/yunzai-jsplug
 或者在云崽根目录下运行这个指令   
 ``` console
 curl -o "./plugins/example/神人指数分析器.js" "https://gitee.com/pimeng/yunzai-jsplugin/raw/master/神人指数分析器.js"
+```
+
+## sendMail
+### 介绍   
+   
+发送邮件依赖
+至于拿来干嘛自己知道 
+   
+### 食用方法
+   
+注意，本插件需要添加“nodemailer”作为外部库，可以使用下面指令来添加   
+``` console
+cd plugins/example # 进入目录
+pnpm add -w nodemailer
+```
+
+
+下载插件并放到Yunzai/plugins/example目录下即可<br>
+或者在云崽根目录下运行这个指令   
+``` console
+curl -o "./plugins/example/sendMail.js" "https://gitee.com/pimeng/yunzai-jsplugin/raw/master/sendMail.js"
 ```
