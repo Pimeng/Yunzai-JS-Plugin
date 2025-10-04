@@ -17,15 +17,16 @@
 ## CheckPhira   
 
 ### 介绍
-因为近期Phira服务器频频炸服，群友需要，故诞生了本插件
+一个可以查询Phira的官方服务器和多人联机服务器的状态的插件
 
 ### 食用方法
-下载插件并放到Yunzai/plugins/example目录下即可<br>
-或者在云崽根目录下运行这个指令   
+1. 下载插件并放到Yunzai/plugins/example目录下<br>
+> 或者在云崽根目录下运行这个指令   
 ``` 
 curl -o "./plugins/example/Checkphira.js" "https://gitee.com/pimeng/yunzai-jsplugin/raw/master/checkphira.js"
 ```
-注意，本插件需要添加“axios”作为外部库，可以使用下面指令来添加
+2. 将代码中的`mp.tianstudio.top:31205`和`mp.tianstudio.top:31206/api/rooms`更改为自己的服务器的联机地址和查房间的API地址
+3. 为插件添加“axios”作为外部库，可以使用下面指令来添加
 ```
 cd plugins/example # 进入目录
 pnpm add axios # 添加 axios 库
