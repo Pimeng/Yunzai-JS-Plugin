@@ -1,49 +1,108 @@
 import plugin from '../../lib/plugins/plugin.js';
 import axios from 'axios';
 
-/*
-* @ContactMe: QQ1470458485 Or pimeng@pimeng.icu
-*/
-
-function checkServerStatus(url) {
-    return axios.get(url, {
-        timeout: 3000,
-    }).then(response => {
-        if (response.status == 200) {
-        return `✅服务器正常运行`;
-        } else if (response.status >= 500 && response.status <  600) {
-        return `❌️服务器故障（状态码：${response.status}）`;
-        }}).catch(error => {
-        const errorMessage = error.code === 'ECONNABORTED' || (error.message && error.message.includes('Network Error') && !(error.response && error.response.status))
-        ? '请求超时或网络错误，服务器可能无响应。\n可能出现的情况：连接不上联机服务器。'
-        : `网络错误：${error.message}`;
-        return `⚠️${errorMessage}\n`;
+/**
+ * 检查服务器状态（GET 请求）
+ * @param {string} url - 服务器地址
+ * @param {string} name - 服务器名称
+ */
+function checkServerStatus(url, name) {
+  const start = Date.now();
+  return axios.get(url, { timeout: 3000 })
+    .then(response => {
+      const delay = Date.now() - start;
+      if (response.status === 200) {
+        return `✅ ${name} 正常运行 (延迟: ${delay}ms)`;
+      } else {
+        return `❌ ${name} 异常 (状态码: ${response.status}, 延迟: ${delay}ms)`;
+      }
+    })
+    .catch(error => {
+      const delay = Date.now() - start;
+      let errorMsg = error.code === 'ECONNABORTED' ? '请求超时' : 
+                    (error.message || '网络错误');
+      return `❌ ${name} 无法连接: ${errorMsg} (${delay}ms)`;
     });
-} 
+}
+
+/**
+ * 获取房间列表（GET 请求）
+ */
+async function getRoomList() {
+  try {
+    const url = 'http://mp.tianstudio.top:31206/api/rooms';
+    // 明确使用 GET 请求
+    const res = await axios.get(url, { timeout: 5000 });
+
+    const rooms = Array.isArray(res.data) ? res.data : [];
+
+    if (rooms.length === 0) {
+      return '当前没有房间。';
+    }
+
+    return rooms.map(room => {
+      let chartInfo = room.current_chart
+        ? `【${room.current_chart.name}】（谱面ID：#${room.current_chart.id}）`
+        : '未选择';
+
+      let lockedStr = room.locked ? '已锁定' : '未锁定';
+
+      let playersStr = room.players && room.players.length
+        ? `玩家列表：\n${room.players.map(p => `- ${p}`).join('\n')}`
+        : '玩家列表：无';
+
+      return `房间编号：${room.id}
+玩家数量：${room.player_count}
+房间状态：${room.state}
+轮换模式：${room.mode}
+锁定状态：${lockedStr}
+${playersStr}
+当前谱面：${chartInfo}`;
+    }).join('\n\n'); // 多房间之间空一行
+  } catch (err) {
+    return `获取房间列表失败：${err.message}`;
+  }
+}
 
 export class CheckPhira extends plugin {
-    constructor() {
-        super({
-            name: '服务器分析',
-            dsc: '分析服务器为什么连不上',
-            event: 'message',
-            priority: 5000,
-            rule: [{
-                reg: "/phira",
-                fnc: 'check'
-            }]
-        });
-    }
+  constructor() {
+    super({
+      name: '服务器分析',
+      dsc: '分析服务器为什么连不上',
+      event: 'message',
+      priority: -2147483647,
+      rule: [{
+        reg: /^(\/|#)phira$/,
+        fnc: 'check'
+      }]
+    });
+  }
 
-    async check(e) {
-        e.reply([segment.at(e.user_id), `\n正在查询服务器状态，请稍后...`],true);
-        const phiraUrl = 'https://api.phira.cn/chart/';
-        const mpUrl = 'http://127.0.0.1:8080/room'; // 这里按照你自己的地址修改哈，实际应该是mp服务器的查房间地址
-        const [phiraStatus, mpStatus] = await Promise.all([
-            checkServerStatus(phiraUrl),
-            checkServerStatus(mpUrl)
-        ]);
-        var Reply = `\n服务器状态查询结果：\nPhira服务器状态: ${phiraStatus}\n联机服务器状态: ${mpStatus}` + `\n注：以上结果仅供参考，具体还需根据当地情况确认。`;
-        await e.reply([segment.at(e.user_id), ` ${Reply}`],true)
-    }
+  async check(e) {
+    await e.reply([segment.at(e.user_id), "\n正在查询服务器状态，请稍后..."], true);
+    
+    const servers = [
+      { url: 'https://api.phira.cn/chart/', name: 'Phira 服务器' },
+      { url: 'http://127.0.0.1:31206/api/rooms', name: '联机服务器' }
+    ];
+    
+    // 检查所有服务器状态（GET 请求）
+    const results = await Promise.all(
+      servers.map(server => checkServerStatus(server.url, server.name))
+    );
+    
+    // 获取房间列表（GET 请求）
+    const roomList = await getRoomList();
+
+    const Reply = `\n服务器状态查询结果：
+${results.join('\n')}
+当前联机服务器：mp.tianstudio.top:31205
+
+房间列表：
+${roomList}
+
+注：以上结果仅供参考，具体还需根据当地情况确认。`;
+
+    await e.reply([segment.at(e.user_id), ` ${Reply}`], true);
+  }
 }
