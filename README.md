@@ -25,7 +25,7 @@
 ``` 
 curl -o "./plugins/example/Checkphira.js" "https://gitee.com/pimeng/yunzai-jsplugin/raw/master/checkphira.js"
 ```
-2. 将代码中的`mp.tianstudio.top:31205`和`mp.tianstudio.top:31206/api/rooms`更改为自己的服务器的联机地址和查房间的API地址
+2. 将代码中的`example.com:114514`和`example:114514/api/rooms`更改为自己的服务器的联机地址和查房间的API地址
 3. 为插件添加“axios”作为外部库，可以使用下面指令来添加
 ```
 cd plugins/example # 进入目录
@@ -86,6 +86,8 @@ pnpm add chinese-lunar moment
    
 无用插件+1   
 通过抓包获取Phigros的更新日志
+
+> 或通过[神奇（并非）的API项目](https://github.com/Pimeng/Taptapapi)
    
 ### 食用方法
    

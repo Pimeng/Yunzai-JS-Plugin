@@ -4,7 +4,7 @@ const specialSettings = [
   {
     "inputContent": "奶龙",
     "fixedScore": 100,
-    "specialDisplayContent": "补药给我味这种东西啊",
+    "specialDisplayContent": "补药给我喂这种东西啊",
     "popupContent": "口区，唐死我了！"
   },
   {

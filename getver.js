@@ -1,13 +1,11 @@
 import plugin from '../../lib/plugins/plugin.js';
 import fs from 'node:fs'
 
-let p = JSON.parse(fs.readFileSync('package.json', 'utf8'))
-
 export class GetVersion extends plugin {
     constructor() {
       super({
         name: 'GetVersion',
-        dsc: '简单获取当前运行的云崽版本',
+        dsc: '获取当前运行的云崽分支',
         event: 'message',
         priority: 100,
         rule: [
@@ -20,6 +18,7 @@ export class GetVersion extends plugin {
     }
 
     async getyunver(e){
+        let p = JSON.parse(fs.readFileSync('package.json', 'utf8'))
         const n = p.name.replace(/(^\w|-\w)/g, s => s.toUpperCase())
         e.reply(`当前云崽分支：${n}`)
     }

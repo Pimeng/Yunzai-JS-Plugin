@@ -6,12 +6,12 @@ export class GetTime extends plugin {
     constructor() {
       super({
         name: 'DateNow',
-        dsc: '获取现在时间哦喵',
+        dsc: '获取现在时间喵',
         event: 'message',
         priority: -100,
         rule: [
           {
-            reg: '^#?(现在|当前|目前)?(时间|报时|日期|几点)了?？?$',
+            reg: '^#?(现在|当前|目前)?(时间|日期|几点)了?？?$',
             fnc: 'datenow'
           }
         ]
@@ -48,7 +48,7 @@ export class GetTime extends plugin {
         const lunarMonth = toChineseMonth(month);
         const lunarDay = toChineseDay(lunarDate.day-1);
         var time = moment(Date.now()).format('HH:mm:ss')
-        var sendmsg = `❤️${e.sender.nickname}你好\n📅今天是${year}年${month + 1}月${day}日，${day7}\n📅农历${lunarYearStemBranch}${lunarMonth}${lunarDay}\n🕒时间是${time}\n⚠️以上时间仅供参考\n✅️若要准确对时可拨打国家授时中心\n☎电话029-83895117`
+        var sendmsg = `📅今天是${year}年${month + 1}月${day}日，${day7}\n📅农历${lunarYearStemBranch}${lunarMonth}${lunarDay}\n🕒时间是${time}\n⚠️以上时间仅供参考\n✅️若要准确对时可拨打国家授时中心\n☎电话029-83895117`
         e.reply(sendmsg,true)
     }
 }

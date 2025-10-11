@@ -16,44 +16,28 @@ export class bmiCalculator extends plugin {
     });
   }
   
-    
-
   async calculateBMI() {
-    // 获取用户输入的身高和体重
     let heightInput = this.e.msg.match(/\d+\.?\d*/g)[0];
     let weightInput = this.e.msg.match(/\d+\.?\d*/g)[1];
-
-    // 转换为数字并处理可能的括号
     let height = parseFloat(heightInput.replace(/[()]/g, ''));
     let weight = parseFloat(weightInput.replace(/[()]/g, ''));
-
-    // 验证输入的有效性
     if (height <= 0 || weight <= 0) {
       await this.reply("身高和体重必须是正数哦~", true);
       return;
     }
-
-    // 检查身高单位（假设用户可能输入厘米或米）
-    if (height > 3) { // 如果身高大于3米，假设输入的是厘米，转换为米
+    if (height > 3) {
       height = height / 100;
     }
-
-    // 计算BMI
     const bmi = weight / (height * height);
     const roundedBMI = bmi.toFixed(1);
-
-    // 获取健康建议
     const advice = this.getBMIAdvice(bmi);
-    // 获取Bot昵称
     const botname = Bot.nickname
-
-    // 构造回复消息
     const replyMsg = [
-      `🧮 BMI计算结果：`,
-      `♿️身高：${height.toFixed(2)}米`,
-      `🛐体重：${weight}公斤`,
-      `👉BMI：${roundedBMI}`,
-      `👉${botname}：${advice}`
+      `BMI计算结果：`,
+      `身高：${height.toFixed(2)}米`,
+      `体重：${weight}公斤`,
+      `BMI：${roundedBMI}`,
+      `${botname}：${advice}`
     ].join("\n");
 
     await this.reply(replyMsg, true);

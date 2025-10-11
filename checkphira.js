@@ -30,27 +30,20 @@ function checkServerStatus(url, name) {
  */
 async function getRoomList() {
   try {
-    const url = 'http://mp.tianstudio.top:31206/api/rooms';
-    // 明确使用 GET 请求
+    const url = 'http://example.com:114514/api/rooms';
     const res = await axios.get(url, { timeout: 5000 });
-
     const rooms = Array.isArray(res.data) ? res.data : [];
-
     if (rooms.length === 0) {
       return '当前没有房间。';
     }
-
     return rooms.map(room => {
       let chartInfo = room.current_chart
         ? `【${room.current_chart.name}】（谱面ID：#${room.current_chart.id}）`
         : '未选择';
-
       let lockedStr = room.locked ? '已锁定' : '未锁定';
-
       let playersStr = room.players && room.players.length
         ? `玩家列表：\n${room.players.map(p => `- ${p}`).join('\n')}`
         : '玩家列表：无';
-
       return `房间编号：${room.id}
 玩家数量：${room.player_count}
 房间状态：${room.state}
@@ -83,7 +76,7 @@ export class CheckPhira extends plugin {
     
     const servers = [
       { url: 'https://api.phira.cn/chart/', name: 'Phira 服务器' },
-      { url: 'http://127.0.0.1:31206/api/rooms', name: '联机服务器' }
+      { url: 'http://example.com:31206/api/rooms', name: '联机服务器' }
     ];
     
     // 检查所有服务器状态（GET 请求）
@@ -96,12 +89,12 @@ export class CheckPhira extends plugin {
 
     const Reply = `\n服务器状态查询结果：
 ${results.join('\n')}
-当前联机服务器：mp.tianstudio.top:31205
+当前联机服务器：example.com:114514
 
 房间列表：
 ${roomList}
 
-注：以上结果仅供参考，具体还需根据当地情况确认。`;
+注：以上结果仅供参考`;
 
     await e.reply([segment.at(e.user_id), ` ${Reply}`], true);
   }

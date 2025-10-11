@@ -22,12 +22,11 @@ export class ExpressQueryHelper extends plugin {
     // 屏蔽群聊
     if (e.isGroup) {
       e.group.recallMsg(e.seq)
-      e.reply('喵喵喵，只能在私聊查哦，不能在群里边查！（炸毛）\nBot正在尝试撤回你的消息！如果不成功请手动撤回喵喵喵！')
+      e.reply('喵喵喵，为了隐私安全只能在私聊查哦\nBot正在尝试撤回你的消息！如果不成功请手动撤回')
       return false
     }
     // 查询逻辑开始
     e.reply("正在查询哦喵")
-    common.sleep(500) // 睡一会先qwq
     const match = e.msg.match(/^#?快递查询\s+(\S+)(?:\s+(\d{4}))?$/)
     const [_, postid, phoneLast4] = match || []
     if (!postid) return e.reply('喵喵喵，你的快递单号呢？')

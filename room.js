@@ -23,28 +23,28 @@ export class GetRooms extends plugin {
   }
 
   async QueryRooms(e) {
-           e.reply("正在查询，请等一下哦！\n//·/w\·\\\\",false,{ recallMsg: 3 })
-            try {
-                const response = await axios.get('http://127.0.0.1:520/room', { responseType: 'arraybuffer' });
-                const statusCode = response.status;
+        e.reply("正在查询，请等一下哦！\n//·/w\·\\\\",false,{ recallMsg: 3 })
+        try {
+            const response = await axios.get('http://127.0.0.1:520/room', { responseType: 'arraybuffer' });
+            const statusCode = response.status;
 
-                if (statusCode === 200) {
-                    // 保存文件为png格式
-                    const filePath = path.join(__dirname, '../../temp/autophira-rooms/temp_room.png');
-                    fs.writeFileSync(filePath, response.data);
+            if (statusCode === 200) {
+                // 保存文件为png格式
+                const filePath = path.join(__dirname, '../../temp/autophira-rooms/temp_room.png');
+                fs.writeFileSync(filePath, response.data);
 
-                    e.reply({
-                       type: 'image',
-                       file: filePath,
-                    });
-                } else if (statusCode === 114) {
-                    e.reply('现在没有可用的房间哦QwQ');
-                } else {
-                    e.reply(`服务器返回了未知的状态码：${statusCode}`);
-                }
-            } catch (error) {
-                logger.error('[房间查询]访问服务器时出错：', error);
-                e.reply('无法连接至联机服务器，请联系Easy查看日志解决问题。');
+                e.reply({
+                    type: 'image',
+                    file: filePath,
+                });
+            } else if (statusCode === 114) {
+                e.reply('现在没有可用的房间哦QwQ');
+            } else {
+                e.reply(`服务器返回了未知的状态码：${statusCode}`);
             }
+        } catch (error) {
+            logger.error('[房间查询]访问服务器时出错：', error);
+            e.reply('无法连接至联机服务器，请联系Easy查看日志解决问题。');
+        }
     }
 }
