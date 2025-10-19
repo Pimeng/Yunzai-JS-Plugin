@@ -10,6 +10,7 @@
 - [Gay指数](https://gitee.com/pimeng/yunzai-jsplugin#gay%E6%8C%87%E6%95%B0)
 - [神人指数分析器](https://gitee.com/pimeng/yunzai-jsplugin#%E7%A5%9E%E4%BA%BA%E6%8C%87%E6%95%B0%E5%88%86%E6%9E%90%E5%99%A8)
 - [sendMail](https://gitee.com/pimeng/yunzai-jsplugin#sendmail)
+- [Phira-Check](https://gitee.com/pimeng/yunzai-jsplugin#phira-check)
 
 ### 介绍
 自用简单JS插件
@@ -181,4 +182,25 @@ pnpm add -w nodemailer
 或者在云崽根目录下运行这个指令   
 ``` console
 curl -o "./plugins/example/sendMail.js" "https://gitee.com/pimeng/yunzai-jsplugin/raw/master/sendMail.js"
+```
+
+## Phira-Check
+### 介绍   
+   
+更好的PhiraMP服务器测试插件，用于检测指定的PhiraMP服务器是否可用，直接实际尝试能否连接到服务器
+
+因为代码难写，代码经过了加密，默认配置项在代码的前面定义了，自己修改，实际内容请自己编写
+
+拿到插件请先修改开头的 credentials 为自己的账号，格式 `account@example:password` 
+    
+默认连接的服务器也得自己修改，因为我给出的默认服务器是PhiraMP官方服务期，我也不确定能不能用
+   
+### 食用方法
+
+拿到插件请先修改开头的 credentials 为自己的账号，格式 `account@example:password` 
+
+下载插件并放到Yunzai/plugins/example目录下即可<br>
+或者在云崽根目录下运行这个指令   
+``` console
+curl -o "./plugins/example/Phira-Check.js" "https://gitee.com/pimeng/yunzai-jsplugin/raw/master/Phira-Check.js"
 ```
