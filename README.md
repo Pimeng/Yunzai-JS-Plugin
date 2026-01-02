@@ -11,6 +11,7 @@
 - [Gay指数](https://gitee.com/pimeng/yunzai-jsplugin#gay%E6%8C%87%E6%95%B0)
 - [神人指数分析器](https://gitee.com/pimeng/yunzai-jsplugin#%E7%A5%9E%E4%BA%BA%E6%8C%87%E6%95%B0%E5%88%86%E6%9E%90%E5%99%A8)
 - [sendMail](https://gitee.com/pimeng/yunzai-jsplugin#sendmail)
+- [随机图](https://gitee.com/pimeng/yunzai-jsplugin#%E9%9A%8F%E6%9C%BA%E5%9B%BE)
 
 ### 介绍
 自用简单JS插件
@@ -200,9 +201,22 @@ cd plugins/example # 进入目录
 pnpm add -w nodemailer
 ```
 
-
 下载插件并放到Yunzai/plugins/example目录下即可<br>
 或者在云崽根目录下运行这个指令   
 ``` console
 curl -o "./plugins/example/sendMail.js" "https://gitee.com/pimeng/yunzai-jsplugin/raw/master/sendMail.js"
+```
+
+## 随机图
+
+### 介绍
+
+读取某一目录下的所有图片，洗牌之后随机抽一张发送
+
+### 食用方法
+
+下载插件并放到Yunzai/plugins/example目录下即可<br>
+或者在云崽根目录下运行这个指令   
+``` console
+curl -o "./plugins/example/随机图.js" "https://gitee.com/pimeng/yunzai-jsplugin/raw/master/随机图.js"
 ```
